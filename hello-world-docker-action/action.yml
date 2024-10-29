@@ -1,0 +1,13 @@
+name: Docker Action
+
+inputs:
+  who-to-greet:
+    required: true
+    default: world
+outputs:
+  time: ${{ steps.hello.outputs.time }}
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.who-to-greet }}

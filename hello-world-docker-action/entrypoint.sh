@@ -1,4 +1,6 @@
 #!/bin/sh
 
 echo "$@"
-echo "$@" > $GITHUB_OUTPUT
+
+echo "time=$(date)" >> $GITHUB_OUTPUT
+

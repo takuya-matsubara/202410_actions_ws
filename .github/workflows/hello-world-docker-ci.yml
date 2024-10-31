@@ -20,4 +20,4 @@ jobs:
         who-to-greet: 'Mona the Octocat'
 
     - name: output
-      run: echo "${{ steps.hello.outputs }}"
+      run: echo "${{ steps.hello.outputs.time }}"

@@ -1,0 +1,23 @@
+name: Docker Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Hello world action step
+      id: hello
+      uses: ./hello-world-docker-action
+      with:
+        who-to-greet: 'Mona the Octocat'
+
+    - name: output
+      run: echo "${{ steps.hello.outputs }}"
